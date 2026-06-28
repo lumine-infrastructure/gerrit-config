@@ -8,3 +8,4 @@ LumineDroid:
   - LumineDroid/platform_manifest
   - LumineDroid/platform_vendor_extra
   - LumineDroid/platform_vendor_lumine
+  - LumineDroid/platform_build
