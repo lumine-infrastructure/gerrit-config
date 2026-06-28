@@ -1,0 +1,10 @@
+# Structure of Gerrit projects
+# Format:
+# ParentProject:
+#   - ChildProject1
+#   - ChildProject2
+
+LumineDroid:
+  - LumineDroid/platform_manifest
+  - LumineDroid/platform_vendor_extra
+  - LumineDroid/platform_vendor_lumine
