@@ -1,8 +1,77 @@
-# Structure of Gerrit projects
-# Format:
-# ParentProject:
-#   - ChildProject1
-#   - ChildProject2
+---
+All-Projects:
+  - LumineDroid
+  - LumineDroid-Devices
+  - OEM-Xiaomi
 
 LumineDroid:
   - LumineDroid/platform_manifest
+  - LumineDroid/platform_bionic
+  - LumineDroid/platform_development
+  - LumineDroid/platform_kernel_configs
+  - LumineDroid/platform_build
+  - LumineDroid/platform_build_release
+  - LumineDroid/platform_build_soong
+  - LumineDroid/platform_bootable_deprecated-ota
+  - LumineDroid/platform_bootable_recovery
+  - LumineDroid/platform_device_lumine_sepolicy
+  - LumineDroid/platform_external_ant-wireless_hidl
+  - LumineDroid/platform_external_dng_sdk
+  - LumineDroid/platform_external_dtc
+  - LumineDroid/platform_external_exfatprogs
+  - LumineDroid/platform_external_libjxl
+  - LumineDroid/platform_external_tinycompress
+  - LumineDroid/platform_external_bouncycastle
+  - LumineDroid/platform_external_e2fsprogs
+  - LumineDroid/platform_external_gptfdisk
+  - LumineDroid/platform_external_mksh
+  - LumineDroid/platform_external_wpa_supplicant_8
+  - LumineDroid/platform_external_sqlite
+  - LumineDroid/platform_external_zstd
+  - LumineDroid/platform_frameworks_av
+  - LumineDroid/platform_frameworks_base
+  - LumineDroid/platform_frameworks_libs_systemui
+  - LumineDroid/platform_frameworks_native
+  - LumineDroid/platform_hardware_google_interfaces
+  - LumineDroid/platform_hardware_google_pixel
+  - LumineDroid/platform_hardware_google_pixel-sepolicy
+  - LumineDroid/platform_hardware_interfaces
+  - LumineDroid/platform_hardware_libhardware
+  - LumineDroid/platform_hardware_lineage_compat
+  - LumineDroid/platform_hardware_lineage_interfaces
+  - LumineDroid/platform_hardware_qcom-caf_common
+  - LumineDroid/platform_packages_apps_DocumentsUI
+  - LumineDroid/platform_packages_apps_Launcher3
+  - LumineDroid/platform_packages_apps_Settings
+  - LumineDroid/platform_packages_apps_ThemePicker
+  - LumineDroid/platform_packages_apps_Updater
+  - LumineDroid/platform_packages_apps_WallpaperPicker2
+  - LumineDroid/platform_packages_modules_adb
+  - LumineDroid/platform_packages_modules_Bluetooth
+  - LumineDroid/platform_packages_modules_Connectivity
+  - LumineDroid/platform_packages_modules_Nfc
+  - LumineDroid/platform_packages_modules_UprobeStats
+  - LumineDroid/platform_packages_services_Telecomm
+  - LumineDroid/platform_packages_services_Telephony
+  - LumineDroid/platform_system_bpf
+  - LumineDroid/platform_system_chre
+  - LumineDroid/platform_system_core
+  - LumineDroid/platform_system_extras
+  - LumineDroid/platform_system_fs_fs_mgr
+  - LumineDroid/platform_system_keymaster
+  - LumineDroid/platform_system_logging
+  - LumineDroid/platform_system_media
+  - LumineDroid/platform_system_security
+  - LumineDroid/platform_system_sepolicy
+  - LumineDroid/platform_system_update_engine
+  - LumineDroid/platform_system_vold
+  - LumineDroid/platform_vendor_apn
+  - LumineDroid/platform_vendor_extra
+  - LumineDroid/platform_vendor_lumine
+
+LumineDroid-Devices:
+  - LumineDroid-Devices/official_devices
+  - LumineDroid-Devices/platform_vendor_products
+
+OEM-Xiaomi:
+  - LumineDroid-Devices/android_device_xiaomi_topaz

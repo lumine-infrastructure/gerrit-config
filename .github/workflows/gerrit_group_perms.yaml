@@ -1,0 +1,36 @@
+name: Gerrit Group permissions
+on:
+  schedule:
+    - cron: "0 * * * *"
+  workflow_dispatch: {}
+concurrency:
+  group: ${{ github.ref }}
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.x"
+      - env:
+          PYTHONUNBUFFERED: "true"
+          PYTHONDONTWRITEBYTECODE: "true"
+          GERRIT_USER: ${{ secrets.GERRIT_USER }}
+          GERRIT_PASS: ${{ secrets.GERRIT_PASS }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          LOG_LEVEL: ${{ github.event.input.logLevel }}
+        run: |
+          pip install -r requirements.txt
+          python test.py
+          python cron_group_perms.py
+      - name: notify telegram on failure
+        if: ${{ failure() }}
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          MESSAGE: "A job has failed: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+        run: |
+          pip install -r requirements.txt
+          python telegram.py

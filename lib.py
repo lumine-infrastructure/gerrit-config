@@ -13,6 +13,8 @@ class Config:
     GERRIT_USER = os.environ.get("GERRIT_USER", "")
     GERRIT_PASS = os.environ.get("GERRIT_PASS", "")
     GITHUB_TOKEN = os.environ.get("ADMIN_GITHUB_TOKEN", "")
+    TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "")
+    TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID", "")
 
 
 class Gerrit:
@@ -104,3 +106,10 @@ class Gerrit:
 
     def _decode_raw(self, input: str):
         return json.loads(input[5:])
+
+
+def send_telegram_message(text: str):
+    url = f"https://api.telegram.org/bot{Config.TELEGRAM_BOT_TOKEN}/sendMessage"
+    resp = requests.post(url, json={"chat_id": Config.TELEGRAM_CHAT_ID, "text": text})
+    if resp.status_code != 200:
+        raise Exception(f"Error sending telegram message: {resp.text}")
